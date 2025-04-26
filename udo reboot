@@ -1,0 +1,22 @@
+[0;1;32m●[0m udp_listener.service - UDP Joystick Listener Node
+     Loaded: loaded (/etc/systemd/system/udp_listener.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Thu 2025-04-24 00:26:29 +03; 7s ago
+   Main PID: 21702 (launch_udp_list)
+      Tasks: 12 (limit: 3987)
+     Memory: 37.8M
+        CPU: 1.721s
+     CGroup: /system.slice/udp_listener.service
+             ├─21702 /bin/bash /home/kaanjetson/ros2_plc_ws/launch_udp_listener.sh
+             ├─21755 /usr/bin/python3 /opt/ros/humble/bin/ros2 run plc_comm udp_listener_node
+             └─21768 /usr/bin/python3 /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm/udp_listener_node
+
+Nis 24 00:26:35 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443595.578212492] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:35 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443595.674795743] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:35 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443595.776587877] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:35 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443595.878850044] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:35 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443595.975835260] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:36 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443596.077779528] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:36 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443596.174380699] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:36 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443596.276167074] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:36 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443596.378323829] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
+Nis 24 00:26:36 ubuntu launch_udp_listener.sh[21768]: [INFO] [1745443596.474887591] [udp_listener_node]: Joystick → F:0, T:0 | D10=0, D11=0
