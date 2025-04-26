@@ -38,7 +38,7 @@ def start_server(host='0.0.0.0', port=5000):
 
                 while True:
                     frame = video.get().getCvFrame()
-                    encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 60]  # <<< JPEG kalite %60
+                    encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 20]  # <<< JPEG kalite %60
                     result, img_encoded = cv2.imencode('.jpg', frame, encode_param)
 
                     if not result:
