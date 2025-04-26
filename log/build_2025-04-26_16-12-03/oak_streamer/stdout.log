@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating oak_streamer.egg-info
+writing oak_streamer.egg-info/PKG-INFO
+writing dependency_links to oak_streamer.egg-info/dependency_links.txt
+writing entry points to oak_streamer.egg-info/entry_points.txt
+writing requirements to oak_streamer.egg-info/requires.txt
+writing top-level names to oak_streamer.egg-info/top_level.txt
+writing manifest file 'oak_streamer.egg-info/SOURCES.txt'
+reading manifest file 'oak_streamer.egg-info/SOURCES.txt'
+writing manifest file 'oak_streamer.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak-streamer.egg-link (link to .)
+Installing oak_streamer_node script to /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/oak_streamer
+
+Installed /home/kaanjetson/ros2_plc_ws/build/oak_streamer
+running symlink_data
+creating /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/ament_index
+creating /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/ament_index/resource_index
+creating /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/oak_streamer/resource/oak_streamer -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/oak_streamer/package.xml -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer

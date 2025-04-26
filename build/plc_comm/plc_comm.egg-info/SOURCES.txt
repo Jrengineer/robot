@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+plc_comm/__init__.py
+plc_comm/udp_listener_node.py
+plc_comm.egg-info/PKG-INFO
+plc_comm.egg-info/SOURCES.txt
+plc_comm.egg-info/dependency_links.txt
+plc_comm.egg-info/entry_points.txt
+plc_comm.egg-info/requires.txt
+plc_comm.egg-info/top_level.txt
+plc_comm.egg-info/zip-safe
+resource/plc_comm

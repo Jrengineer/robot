@@ -1,0 +1,12 @@
+package.xml
+setup.cfg
+setup.py
+commcheck/__init__.py
+commcheck/commcheck.py
+commcheck.egg-info/PKG-INFO
+commcheck.egg-info/SOURCES.txt
+commcheck.egg-info/dependency_links.txt
+commcheck.egg-info/entry_points.txt
+commcheck.egg-info/requires.txt
+commcheck.egg-info/top_level.txt
+commcheck.egg-info/zip-safe

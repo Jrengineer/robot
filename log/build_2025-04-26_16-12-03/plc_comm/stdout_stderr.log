@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating plc_comm.egg-info
+writing plc_comm.egg-info/PKG-INFO
+writing dependency_links to plc_comm.egg-info/dependency_links.txt
+writing entry points to plc_comm.egg-info/entry_points.txt
+writing requirements to plc_comm.egg-info/requires.txt
+writing top-level names to plc_comm.egg-info/top_level.txt
+writing manifest file 'plc_comm.egg-info/SOURCES.txt'
+reading manifest file 'plc_comm.egg-info/SOURCES.txt'
+writing manifest file 'plc_comm.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc-comm.egg-link (link to .)
+Installing plc_comm_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+Installing plc_write_m11_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+Installing plc_write_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+Installing plc_write_read_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+Installing udp_listener_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+
+Installed /home/kaanjetson/ros2_plc_ws/build/plc_comm
+running symlink_data
+creating /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/ament_index
+creating /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/ament_index/resource_index
+creating /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/plc_comm/resource/plc_comm -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/plc_comm/package.xml -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm
