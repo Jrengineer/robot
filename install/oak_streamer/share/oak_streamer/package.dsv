@@ -4,6 +4,3 @@ source;share/oak_streamer/hook/pythonpath.sh
 source;share/oak_streamer/hook/ament_prefix_path.ps1
 source;share/oak_streamer/hook/ament_prefix_path.dsv
 source;share/oak_streamer/hook/ament_prefix_path.sh
-source;../../build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.ps1
-source;../../build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.dsv
-source;../../build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.sh
