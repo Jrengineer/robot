@@ -28,13 +28,25 @@ class UDPJoystickListener(Node):
         try:
             data, _ = self.sock.recvfrom(1024)
             payload = json.loads(data.decode())
+            
+            # Joystick komutları
             joy_f = int(payload.get('joystick_forward', 0))
             joy_t = int(payload.get('joystick_turn', 0))
-
             self.last_command_time = datetime.now()
             self.last_forward = joy_f
             self.last_turn = joy_t
             self.process_joystick(joy_f, joy_t)
+
+            # =========== YENİ: Fırça kontrolü ===========
+            brush1 = payload.get("brush1", None)
+            brush2 = payload.get("brush2", None)
+            if brush1 is not None:
+                self.write_brush(2068, int(brush1))
+                self.get_logger().info(f"Fırça 1 (M20/2068) → {bool(int(brush1))}")
+            if brush2 is not None:
+                self.write_brush(2069, int(brush2))
+                self.get_logger().info(f"Fırça 2 (M21/2069) → {bool(int(brush2))}")
+            # =============================================
 
         except socket.timeout:
             pass
@@ -89,6 +101,15 @@ class UDPJoystickListener(Node):
 
         self.client.write_registers(10, [left, right])
         self.get_logger().info(f"Joystick → F:{forward}, T:{turn} | D10={left}, D11={right}")
+
+    # ========== GÜNCELLENEN FONKSİYON ==========
+    def write_brush(self, coil_addr, value):
+        # Modbus TCP ile COIL (bit) yazma işlemi
+        try:
+            self.client.write_coil(coil_addr, bool(value))
+        except Exception as e:
+            self.get_logger().error(f"Fırça coil {coil_addr} yazılamadı: {e}")
+    # ============================================
 
 def main(args=None):
     rclpy.init(args=args)
