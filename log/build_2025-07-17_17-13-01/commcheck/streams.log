@@ -1,0 +1,21 @@
+[2.585s] Invoking command in '/home/kaanjetson/ros2_plc_ws/src/commcheck': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/commcheck build --build-base /home/kaanjetson/ros2_plc_ws/build/commcheck/build install --record /home/kaanjetson/ros2_plc_ws/build/commcheck/install.log --single-version-externally-managed install_data
+[3.104s] running egg_info
+[3.105s] writing ../../build/commcheck/commcheck.egg-info/PKG-INFO
+[3.106s] writing dependency_links to ../../build/commcheck/commcheck.egg-info/dependency_links.txt
+[3.106s] writing entry points to ../../build/commcheck/commcheck.egg-info/entry_points.txt
+[3.107s] writing requirements to ../../build/commcheck/commcheck.egg-info/requires.txt
+[3.107s] writing top-level names to ../../build/commcheck/commcheck.egg-info/top_level.txt
+[3.111s] reading manifest file '../../build/commcheck/commcheck.egg-info/SOURCES.txt'
+[3.112s] writing manifest file '../../build/commcheck/commcheck.egg-info/SOURCES.txt'
+[3.112s] running build
+[3.113s] running build_py
+[3.113s] running install
+[3.114s] running install_lib
+[3.116s] running install_data
+[3.117s] running install_egg_info
+[3.124s] removing '/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages/commcheck-0.0.1-py3.10.egg-info' (and everything under it)
+[3.125s] Copying ../../build/commcheck/commcheck.egg-info to /home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages/commcheck-0.0.1-py3.10.egg-info
+[3.126s] running install_scripts
+[3.170s] Installing commcheck script to /home/kaanjetson/ros2_plc_ws/install/commcheck/lib/commcheck
+[3.171s] writing list of installed files to '/home/kaanjetson/ros2_plc_ws/build/commcheck/install.log'
+[3.281s] Invoked command in '/home/kaanjetson/ros2_plc_ws/src/commcheck' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/commcheck build --build-base /home/kaanjetson/ros2_plc_ws/build/commcheck/build install --record /home/kaanjetson/ros2_plc_ws/build/commcheck/install.log --single-version-externally-managed install_data

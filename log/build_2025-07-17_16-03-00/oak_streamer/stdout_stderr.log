@@ -1,0 +1,32 @@
+running develop
+Removing /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak-streamer.egg-link (link to .)
+running egg_info
+writing ../../build/oak_streamer/oak_streamer.egg-info/PKG-INFO
+writing dependency_links to ../../build/oak_streamer/oak_streamer.egg-info/dependency_links.txt
+writing entry points to ../../build/oak_streamer/oak_streamer.egg-info/entry_points.txt
+writing requirements to ../../build/oak_streamer/oak_streamer.egg-info/requires.txt
+writing top-level names to ../../build/oak_streamer/oak_streamer.egg-info/top_level.txt
+reading manifest file '../../build/oak_streamer/oak_streamer.egg-info/SOURCES.txt'
+writing manifest file '../../build/oak_streamer/oak_streamer.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build
+creating /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib
+creating /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib/oak_streamer
+copying oak_streamer/__init__.py -> /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib/oak_streamer
+copying oak_streamer/oak_streamer_node.py -> /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib/oak_streamer
+running install
+running install_lib
+creating /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer
+copying /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib/oak_streamer/__init__.py -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer
+copying /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build/lib/oak_streamer/oak_streamer_node.py -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer
+byte-compiling /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer/oak_streamer_node.py to oak_streamer_node.cpython-310.pyc
+running install_data
+copying resource/oak_streamer -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/ament_index/resource_index/packages
+copying package.xml -> /home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer
+running install_egg_info
+Copying ../../build/oak_streamer/oak_streamer.egg-info to /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer-0.0.0-py3.10.egg-info
+running install_scripts
+Installing oak_streamer_node script to /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/oak_streamer
+writing list of installed files to '/home/kaanjetson/ros2_plc_ws/build/oak_streamer/install.log'

@@ -1,0 +1,7 @@
+[console_scripts]
+plc_comm_node = plc_comm.udp_listener_node:main
+plc_write_m11_node = plc_comm.plc_write_m11:main
+plc_write_node = plc_comm.plc_write_node:main
+plc_write_read_node = plc_comm.plc_write_read_node:main
+udp_listener_node = plc_comm.udp_listener_node:main
+

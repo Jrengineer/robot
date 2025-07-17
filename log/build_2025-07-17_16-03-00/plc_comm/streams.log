@@ -1,0 +1,40 @@
+[2.623s] Invoking command in '/home/kaanjetson/ros2_plc_ws/build/plc_comm': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/plc_comm/build
+[3.206s] running develop
+[3.586s] Removing /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc-comm.egg-link (link to .)
+[3.692s] Invoked command in '/home/kaanjetson/ros2_plc_ws/build/plc_comm' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/plc_comm/build
+[3.697s] Invoking command in '/home/kaanjetson/ros2_plc_ws/src/plc_comm': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plc_comm build --build-base /home/kaanjetson/ros2_plc_ws/build/plc_comm/build install --record /home/kaanjetson/ros2_plc_ws/build/plc_comm/install.log --single-version-externally-managed install_data --force
+[4.223s] running egg_info
+[4.225s] writing ../../build/plc_comm/plc_comm.egg-info/PKG-INFO
+[4.225s] writing dependency_links to ../../build/plc_comm/plc_comm.egg-info/dependency_links.txt
+[4.226s] writing entry points to ../../build/plc_comm/plc_comm.egg-info/entry_points.txt
+[4.226s] writing requirements to ../../build/plc_comm/plc_comm.egg-info/requires.txt
+[4.226s] writing top-level names to ../../build/plc_comm/plc_comm.egg-info/top_level.txt
+[4.233s] reading manifest file '../../build/plc_comm/plc_comm.egg-info/SOURCES.txt'
+[4.235s] writing manifest file '../../build/plc_comm/plc_comm.egg-info/SOURCES.txt'
+[4.236s] running build
+[4.236s] running build_py
+[4.236s] creating /home/kaanjetson/ros2_plc_ws/build/plc_comm/build
+[4.236s] creating /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib
+[4.236s] creating /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib/plc_comm
+[4.237s] copying plc_comm/udp_listener_node.py -> /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib/plc_comm
+[4.237s] copying plc_comm/__init__.py -> /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib/plc_comm
+[4.237s] running install
+[4.237s] running install_lib
+[4.239s] creating /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm
+[4.239s] copying /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib/plc_comm/udp_listener_node.py -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm
+[4.239s] copying /home/kaanjetson/ros2_plc_ws/build/plc_comm/build/lib/plc_comm/__init__.py -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm
+[4.241s] byte-compiling /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm/udp_listener_node.py to udp_listener_node.cpython-310.pyc
+[4.243s] byte-compiling /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm/__init__.py to __init__.cpython-310.pyc
+[4.243s] running install_data
+[4.243s] copying resource/plc_comm -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/ament_index/resource_index/packages
+[4.244s] copying package.xml -> /home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm
+[4.245s] running install_egg_info
+[4.249s] Copying ../../build/plc_comm/plc_comm.egg-info to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages/plc_comm-0.0.0-py3.10.egg-info
+[4.251s] running install_scripts
+[4.295s] Installing plc_comm_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+[4.295s] Installing plc_write_m11_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+[4.296s] Installing plc_write_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+[4.296s] Installing plc_write_read_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+[4.297s] Installing udp_listener_node script to /home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/plc_comm
+[4.297s] writing list of installed files to '/home/kaanjetson/ros2_plc_ws/build/plc_comm/install.log'
+[4.434s] Invoked command in '/home/kaanjetson/ros2_plc_ws/src/plc_comm' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plc_comm build --build-base /home/kaanjetson/ros2_plc_ws/build/plc_comm/build install --record /home/kaanjetson/ros2_plc_ws/build/plc_comm/install.log --single-version-externally-managed install_data --force
