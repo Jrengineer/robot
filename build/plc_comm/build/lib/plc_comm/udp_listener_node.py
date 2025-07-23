@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+UDP üzerinden joystick ve fırça verilerini alıp, Delta PLC'ye Modbus TCP ile gönderen ROS2 Node.
+Joystick değerleri aralığını 0-100 ile sınırlandırır. Register değerleri asla negatif olmaz.
+Bağlantı koptuğunda veya gecikme yüksekse robotu güvenli moda çeker.
+"""
 
 import rclpy
 from rclpy.node import Node
@@ -28,7 +33,7 @@ class UDPJoystickListener(Node):
         self.last_brush1 = None
         self.last_brush2 = None
 
-        self.timer = self.create_timer(0.05, self.check_and_receive)
+        self.timer = self.create_timer(0.05, self.check_and_receive)  # 20Hz
 
     def check_and_receive(self):
         last_payload = None
@@ -51,7 +56,8 @@ class UDPJoystickListener(Node):
             gecikme_ms = now_ts - pkt_ts
             self.get_logger().info(f"UDP paket gecikmesi: {gecikme_ms} ms")
 
-            if gecikme_ms > 1000:
+            # Gecikme limiti burada! (ör: 3000 ms = 3 sn)
+            if gecikme_ms > 6000:
                 if self.is_connected:
                     self.get_logger().warn("AĞ GECİKMESİ YÜKSEK! Robot ve fırçalar güvenli moda geçti.")
                 self.is_connected = False
@@ -79,6 +85,7 @@ class UDPJoystickListener(Node):
         else:
             self.timeout_counter += 1
 
+        # 3 tick boyunca UDP verisi alınmazsa bağlantı kopmuş kabul edilir.
         if self.timeout_counter >= 3:
             if self.is_connected:
                 self.get_logger().warn("❌ Mobil uygulama bağlantısı koptu, robot ve fırçalar durduruluyor.")
@@ -91,51 +98,57 @@ class UDPJoystickListener(Node):
         # Sadece değer değiştiyse yaz, veya force=True ise yaz
         if force or forward != self.last_forward or turn != self.last_turn:
             left = right = 0
-            base_speed = min(abs(forward), 100)
+            base_speed = min(max(abs(forward), 0), 100)  # 0-100 aralığında
 
+            # Ana sürüş hesapları
             if forward > 0:
-                self.client.write_coils(2048 + 11, [True, False])
+                self.client.write_coils(2048 + 11, [True, False])  # İleri
                 self.client.write_coils(2048 + 3, [False, False])
-                if turn > 0:
+                if turn > 0:  # Sağa dönüş (sol daha hızlı)
                     left = base_speed
-                    right = int(base_speed * (1 - abs(turn) / base_speed))
-                elif turn < 0:
+                    right = int(base_speed * (1 - abs(turn) / 100))
+                elif turn < 0:  # Sola dönüş (sağ daha hızlı)
                     right = base_speed
-                    left = int(base_speed * (1 - abs(turn) / base_speed))
+                    left = int(base_speed * (1 - abs(turn) / 100))
                 else:
                     left = right = base_speed
-
             elif forward < 0:
-                self.client.write_coils(2048 + 11, [False, True])
+                self.client.write_coils(2048 + 11, [False, True])  # Geri
                 self.client.write_coils(2048 + 3, [False, False])
                 if turn > 0:
                     left = base_speed
-                    right = int(base_speed * (1 - abs(turn) / base_speed))
+                    right = int(base_speed * (1 - abs(turn) / 100))
                 elif turn < 0:
                     right = base_speed
-                    left = int(base_speed * (1 - abs(turn) / base_speed))
+                    left = int(base_speed * (1 - abs(turn) / 100))
                 else:
                     left = right = base_speed
-
             elif forward == 0:
-                self.client.write_coils(2048 + 11, [False, False])
+                self.client.write_coils(2048 + 11, [False, False])  # Dur
                 if turn > 0:
-                    self.client.write_coils(2048 + 3, [True, False])
+                    self.client.write_coils(2048 + 3, [True, False])  # Sağa
                     left = right = min(abs(turn), 100)
                 elif turn < 0:
-                    self.client.write_coils(2048 + 3, [False, True])
+                    self.client.write_coils(2048 + 3, [False, True])  # Sola
                     left = right = min(abs(turn), 100)
                 else:
                     self.client.write_coils(2048 + 3, [False, False])
 
-            self.client.write_registers(10, [left, right])
+            # DEĞERLERİ KISITLA
+            left = max(0, min(100, left))
+            right = max(0, min(100, right))
+
+            try:
+                self.client.write_registers(10, [left, right])
+            except Exception as e:
+                self.get_logger().error(f"write_registers(10, [{left}, {right}]) HATA: {e}")
+
             self.get_logger().info(f"Joystick → F:{forward}, T:{turn} | D10={left}, D11={right}")
             self.last_forward = forward
             self.last_turn = turn
 
     def write_brush(self, coil_addr, value, force=False):
         last_val = self.last_brush1 if coil_addr == 2068 else self.last_brush2
-        # ANLIK HER TICK GELEN VERİ BURADA LOGLANACAK!
         print(f"[JETSON DEBUG] Fırça {coil_addr} gelen değer: {value}, last_val: {last_val}, force: {force}")
         if force or value != last_val:
             self.client.write_coil(coil_addr, bool(value))
@@ -151,3 +164,6 @@ def main(args=None):
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
