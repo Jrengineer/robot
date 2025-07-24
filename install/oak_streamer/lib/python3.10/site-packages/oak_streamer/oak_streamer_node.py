@@ -6,16 +6,16 @@ import depthai as dai
 def create_pipeline():
     pipeline = dai.Pipeline()
 
-    cam_rgb = pipeline.create(dai.node.ColorCamera)
-    xout_rgb = pipeline.create(dai.node.XLinkOut)
+    # Geniş açılı mono kamera (genelde LEFT)
+    cam_mono = pipeline.create(dai.node.MonoCamera)
+    xout_mono = pipeline.create(dai.node.XLinkOut)
 
-    cam_rgb.setBoardSocket(dai.CameraBoardSocket.RGB)
-    cam_rgb.setResolution(dai.ColorCameraProperties.SensorResolution.THE_720_P)
-    cam_rgb.setColorOrder(dai.ColorCameraProperties.ColorOrder.BGR)
-    cam_rgb.setPreviewSize(640, 360)  # <<< Küçük çözünürlük, düşük gecikme için
+    cam_mono.setBoardSocket(dai.CameraBoardSocket.LEFT)  # Geniş açılı mono için LEFT
+    cam_mono.setResolution(dai.MonoCameraProperties.SensorResolution.THE_720_P)
+    cam_mono.setFps(30)
 
-    xout_rgb.setStreamName("video")
-    cam_rgb.preview.link(xout_rgb.input)
+    xout_mono.setStreamName("mono")
+    cam_mono.out.link(xout_mono.input)
 
     return pipeline
 
@@ -34,11 +34,16 @@ def start_server(host='0.0.0.0', port=5000):
 
         try:
             with dai.Device(create_pipeline()) as device:
-                video = device.getOutputQueue(name="video", maxSize=1, blocking=False)
+                mono = device.getOutputQueue(name="mono", maxSize=1, blocking=False)
 
                 while True:
-                    frame = video.get().getCvFrame()
-                    encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 20]  # <<< JPEG kalite %60
+                    in_mono = mono.get()
+                    frame = in_mono.getCvFrame()   # Mono frame (np.uint8, tek kanal)
+
+                    # İstersen görüntüyü BGR'ye çevirerek Flutter tarafında renkli gibi gösterebilirsin:
+                    # frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)
+
+                    encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 20]
                     result, img_encoded = cv2.imencode('.jpg', frame, encode_param)
 
                     if not result:

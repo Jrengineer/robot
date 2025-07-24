@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 UDP üzerinden joystick ve fırça verilerini alıp, Delta PLC'ye Modbus TCP ile gönderen ROS2 Node.
-Joystick değerleri aralığını 0-100 ile sınırlandırır. Register değerleri asla negatif olmaz.
-Bağlantı koptuğunda veya gecikme yüksekse robotu güvenli moda çeker.
+Bağlantı koptuğunda tekrar bağlantı bekler, terminalde bağlantı durumunu açıkça yazar.
 """
 
 import rclpy
@@ -16,39 +15,75 @@ class UDPJoystickListener(Node):
     def __init__(self):
         super().__init__('udp_listener_node')
         self.client = ModbusTcpClient('192.168.1.5', port=502, timeout=0.1)
-
         self.udp_ip = "0.0.0.0"
         self.udp_port = 8888
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.sock.bind((self.udp_ip, self.udp_port))
-        self.sock.settimeout(0.01)
-        self.get_logger().info(f"UDP listener aktif: {self.udp_ip}:{self.udp_port}")
 
         self.is_connected = True
         self.timeout_counter = 0
 
-        # --- Son yazılan komutlar ---
         self.last_forward = 0
         self.last_turn = 0
         self.last_brush1 = None
         self.last_brush2 = None
 
-        self.timer = self.create_timer(0.05, self.check_and_receive)  # 20Hz
+        self.sock = None
+        self.listener_active = False
+        self.create_udp_socket()
+        self.timer = self.create_timer(0.05, self.main_loop)  # 20Hz
+
+    def create_udp_socket(self):
+        if self.sock:
+            try:
+                self.sock.close()
+            except Exception:
+                pass
+
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            self.sock.bind((self.udp_ip, self.udp_port))
+            self.sock.settimeout(0.01)
+            print(f"📡 UDP bağlantısı bekleniyor... ({self.udp_ip}:{self.udp_port})")
+            self.get_logger().info(f"UDP listener aktif: {self.udp_ip}:{self.udp_port}")
+            self.listener_active = True
+        except Exception as e:
+            print(f"🚨 UDP soketi başlatılamadı: {e}")
+            self.get_logger().error(f"UDP soketi başlatılamadı: {e}")
+            self.listener_active = False
+
+    def main_loop(self):
+        if not self.listener_active:
+            print("⚡ UDP bağlantısı kapalı, tekrar dinleniyor...")
+            self.get_logger().warn("UDP bağlantısı kapalı, tekrar dinleniyor...")
+            self.create_udp_socket()
+            return
+
+        try:
+            self.check_and_receive()
+        except Exception as e:
+            print(f"🚨 Beklenmeyen ana hata: {e}")
+            self.get_logger().error(f"Beklenmeyen ana hata: {e}")
+            self.listener_active = False
+            self.create_udp_socket()
 
     def check_and_receive(self):
         last_payload = None
 
-        # Tüm buffer’ı boşalt, sadece en son paketi işle
         while True:
             try:
-                data, _ = self.sock.recvfrom(1024)
+                data, addr = self.sock.recvfrom(1024)
                 payload = json.loads(data.decode())
                 last_payload = payload
+                if not self.is_connected:
+                    print(f"✅ Mobil uygulama bağlantısı geldi! ({addr})")
+                self.is_connected = True
             except socket.timeout:
                 break
             except Exception as e:
+                print(f"🚨 UDP decode hatası: {e}")
                 self.get_logger().error(f"UDP decode hatası: {str(e)}")
-                break
+                self.listener_active = False
+                return
 
         if last_payload is not None:
             pkt_ts = int(last_payload.get('ts', 0))
@@ -56,9 +91,9 @@ class UDPJoystickListener(Node):
             gecikme_ms = now_ts - pkt_ts
             self.get_logger().info(f"UDP paket gecikmesi: {gecikme_ms} ms")
 
-            # Gecikme limiti burada! (ör: 3000 ms = 3 sn)
-            if gecikme_ms > 6000:
+            if gecikme_ms > 3000:
                 if self.is_connected:
+                    print("⚡ Ağ gecikmesi yüksek, robot güvenli moda geçti!")
                     self.get_logger().warn("AĞ GECİKMESİ YÜKSEK! Robot ve fırçalar güvenli moda geçti.")
                 self.is_connected = False
                 self.process_joystick(0, 0, force=True)
@@ -67,7 +102,6 @@ class UDPJoystickListener(Node):
                 self.timeout_counter = 0
                 return
 
-            # Joystick ve brush değerlerini işle
             joy_f = int(last_payload.get('joystick_forward', 0))
             joy_t = int(last_payload.get('joystick_turn', 0))
             brush1 = int(last_payload.get("brush1", 0))
@@ -76,18 +110,14 @@ class UDPJoystickListener(Node):
             self.write_brush(2068, brush1)
             self.write_brush(2069, brush2)
 
-            # Bağlantı sağlıklı, sayaç sıfırla
-            if not self.is_connected:
-                self.get_logger().info("Mobil uygulama yeniden bağlandı.")
-            self.is_connected = True
             self.timeout_counter = 0
 
         else:
             self.timeout_counter += 1
 
-        # 3 tick boyunca UDP verisi alınmazsa bağlantı kopmuş kabul edilir.
         if self.timeout_counter >= 3:
             if self.is_connected:
+                print("❌ Mobil uygulama bağlantısı koptu, tekrar bağlantı bekleniyor...")
                 self.get_logger().warn("❌ Mobil uygulama bağlantısı koptu, robot ve fırçalar durduruluyor.")
             self.is_connected = False
             self.process_joystick(0, 0, force=True)
@@ -95,25 +125,23 @@ class UDPJoystickListener(Node):
             self.write_brush(2069, 0, force=True)
 
     def process_joystick(self, forward, turn, force=False):
-        # Sadece değer değiştiyse yaz, veya force=True ise yaz
         if force or forward != self.last_forward or turn != self.last_turn:
             left = right = 0
-            base_speed = min(max(abs(forward), 0), 100)  # 0-100 aralığında
+            base_speed = min(max(abs(forward), 0), 100)
 
-            # Ana sürüş hesapları
             if forward > 0:
-                self.client.write_coils(2048 + 11, [True, False])  # İleri
+                self.client.write_coils(2048 + 11, [True, False])
                 self.client.write_coils(2048 + 3, [False, False])
-                if turn > 0:  # Sağa dönüş (sol daha hızlı)
+                if turn > 0:
                     left = base_speed
                     right = int(base_speed * (1 - abs(turn) / 100))
-                elif turn < 0:  # Sola dönüş (sağ daha hızlı)
+                elif turn < 0:
                     right = base_speed
                     left = int(base_speed * (1 - abs(turn) / 100))
                 else:
                     left = right = base_speed
             elif forward < 0:
-                self.client.write_coils(2048 + 11, [False, True])  # Geri
+                self.client.write_coils(2048 + 11, [False, True])
                 self.client.write_coils(2048 + 3, [False, False])
                 if turn > 0:
                     left = base_speed
@@ -124,17 +152,16 @@ class UDPJoystickListener(Node):
                 else:
                     left = right = base_speed
             elif forward == 0:
-                self.client.write_coils(2048 + 11, [False, False])  # Dur
+                self.client.write_coils(2048 + 11, [False, False])
                 if turn > 0:
-                    self.client.write_coils(2048 + 3, [True, False])  # Sağa
+                    self.client.write_coils(2048 + 3, [True, False])
                     left = right = min(abs(turn), 100)
                 elif turn < 0:
-                    self.client.write_coils(2048 + 3, [False, True])  # Sola
+                    self.client.write_coils(2048 + 3, [False, True])
                     left = right = min(abs(turn), 100)
                 else:
                     self.client.write_coils(2048 + 3, [False, False])
 
-            # DEĞERLERİ KISITLA
             left = max(0, min(100, left))
             right = max(0, min(100, right))
 
@@ -149,7 +176,6 @@ class UDPJoystickListener(Node):
 
     def write_brush(self, coil_addr, value, force=False):
         last_val = self.last_brush1 if coil_addr == 2068 else self.last_brush2
-        print(f"[JETSON DEBUG] Fırça {coil_addr} gelen değer: {value}, last_val: {last_val}, force: {force}")
         if force or value != last_val:
             self.client.write_coil(coil_addr, bool(value))
             self.get_logger().info(f"Fırça {coil_addr} → {bool(value)}")

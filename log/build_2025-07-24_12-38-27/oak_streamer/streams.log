@@ -1,0 +1,21 @@
+[2.504s] Invoking command in '/home/kaanjetson/ros2_plc_ws/src/oak_streamer': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/oak_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/oak_streamer build --build-base /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build install --record /home/kaanjetson/ros2_plc_ws/build/oak_streamer/install.log --single-version-externally-managed install_data
+[3.057s] running egg_info
+[3.060s] writing ../../build/oak_streamer/oak_streamer.egg-info/PKG-INFO
+[3.060s] writing dependency_links to ../../build/oak_streamer/oak_streamer.egg-info/dependency_links.txt
+[3.061s] writing entry points to ../../build/oak_streamer/oak_streamer.egg-info/entry_points.txt
+[3.062s] writing requirements to ../../build/oak_streamer/oak_streamer.egg-info/requires.txt
+[3.062s] writing top-level names to ../../build/oak_streamer/oak_streamer.egg-info/top_level.txt
+[3.066s] reading manifest file '../../build/oak_streamer/oak_streamer.egg-info/SOURCES.txt'
+[3.068s] writing manifest file '../../build/oak_streamer/oak_streamer.egg-info/SOURCES.txt'
+[3.068s] running build
+[3.068s] running build_py
+[3.070s] running install
+[3.070s] running install_lib
+[3.073s] running install_data
+[3.073s] running install_egg_info
+[3.077s] removing '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer-0.0.0-py3.10.egg-info' (and everything under it)
+[3.078s] Copying ../../build/oak_streamer/oak_streamer.egg-info to /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages/oak_streamer-0.0.0-py3.10.egg-info
+[3.080s] running install_scripts
+[3.129s] Installing oak_streamer_node script to /home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/oak_streamer
+[3.130s] writing list of installed files to '/home/kaanjetson/ros2_plc_ws/build/oak_streamer/install.log'
+[3.256s] Invoked command in '/home/kaanjetson/ros2_plc_ws/src/oak_streamer' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/oak_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/oak_streamer build --build-base /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build install --record /home/kaanjetson/ros2_plc_ws/build/oak_streamer/install.log --single-version-externally-managed install_data
