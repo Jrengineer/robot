@@ -14,7 +14,10 @@ from pymodbus.client import ModbusTcpClient
 class UDPJoystickListener(Node):
     def __init__(self):
         super().__init__('udp_listener_node')
-        self.client = ModbusTcpClient('192.168.1.5', port=502, timeout=0.1)
+        self.plc_ip = '192.168.1.5'
+        self.plc_port = 502
+        self.modbus_timeout = 1.0
+
         self.udp_ip = "0.0.0.0"
         self.udp_port = 8888
 
@@ -28,8 +31,26 @@ class UDPJoystickListener(Node):
 
         self.sock = None
         self.listener_active = False
+
+        self.client = None
+        self.ensure_modbus_client()
+
         self.create_udp_socket()
         self.timer = self.create_timer(0.05, self.main_loop)  # 20Hz
+
+    def ensure_modbus_client(self):
+        if self.client is None or not self.client.connected:
+            try:
+                if self.client is not None:
+                    self.client.close()
+                self.client = ModbusTcpClient(self.plc_ip, port=self.plc_port, timeout=self.modbus_timeout)
+                connected = self.client.connect()
+                if connected:
+                    self.get_logger().info("Modbus TCP bağlantısı başarılı!")
+                else:
+                    self.get_logger().warn("Modbus TCP bağlantısı kurulamadı, tekrar denenecek...")
+            except Exception as e:
+                self.get_logger().error(f"Modbus TCP bağlantı hatası: {e}")
 
     def create_udp_socket(self):
         if self.sock:
@@ -52,6 +73,8 @@ class UDPJoystickListener(Node):
             self.listener_active = False
 
     def main_loop(self):
+        self.ensure_modbus_client()
+
         if not self.listener_active:
             print("⚡ UDP bağlantısı kapalı, tekrar dinleniyor...")
             self.get_logger().warn("UDP bağlantısı kapalı, tekrar dinleniyor...")
@@ -126,49 +149,54 @@ class UDPJoystickListener(Node):
 
     def process_joystick(self, forward, turn, force=False):
         if force or forward != self.last_forward or turn != self.last_turn:
+            self.ensure_modbus_client()
             left = right = 0
             base_speed = min(max(abs(forward), 0), 100)
 
-            if forward > 0:
-                self.client.write_coils(2048 + 11, [True, False])
-                self.client.write_coils(2048 + 3, [False, False])
-                if turn > 0:
-                    left = base_speed
-                    right = int(base_speed * (1 - abs(turn) / 100))
-                elif turn < 0:
-                    right = base_speed
-                    left = int(base_speed * (1 - abs(turn) / 100))
-                else:
-                    left = right = base_speed
-            elif forward < 0:
-                self.client.write_coils(2048 + 11, [False, True])
-                self.client.write_coils(2048 + 3, [False, False])
-                if turn > 0:
-                    left = base_speed
-                    right = int(base_speed * (1 - abs(turn) / 100))
-                elif turn < 0:
-                    right = base_speed
-                    left = int(base_speed * (1 - abs(turn) / 100))
-                else:
-                    left = right = base_speed
-            elif forward == 0:
-                self.client.write_coils(2048 + 11, [False, False])
-                if turn > 0:
-                    self.client.write_coils(2048 + 3, [True, False])
-                    left = right = min(abs(turn), 100)
-                elif turn < 0:
-                    self.client.write_coils(2048 + 3, [False, True])
-                    left = right = min(abs(turn), 100)
-                else:
-                    self.client.write_coils(2048 + 3, [False, False])
-
-            left = max(0, min(100, left))
-            right = max(0, min(100, right))
-
             try:
-                self.client.write_registers(10, [left, right])
+                if forward > 0:
+                    res1 = self.client.write_coils(2048 + 11, [True, False])
+                    res2 = self.client.write_coils(2048 + 3, [False, False])
+                    if turn > 0:
+                        left = base_speed
+                        right = int(base_speed * (1 - abs(turn) / 100))
+                    elif turn < 0:
+                        right = base_speed
+                        left = int(base_speed * (1 - abs(turn) / 100))
+                    else:
+                        left = right = base_speed
+                elif forward < 0:
+                    res1 = self.client.write_coils(2048 + 11, [False, True])
+                    res2 = self.client.write_coils(2048 + 3, [False, False])
+                    if turn > 0:
+                        left = base_speed
+                        right = int(base_speed * (1 - abs(turn) / 100))
+                    elif turn < 0:
+                        right = base_speed
+                        left = int(base_speed * (1 - abs(turn) / 100))
+                    else:
+                        left = right = base_speed
+                elif forward == 0:
+                    res1 = self.client.write_coils(2048 + 11, [False, False])
+                    if turn > 0:
+                        res2 = self.client.write_coils(2048 + 3, [True, False])
+                        left = right = min(abs(turn), 100)
+                    elif turn < 0:
+                        res2 = self.client.write_coils(2048 + 3, [False, True])
+                        left = right = min(abs(turn), 100)
+                    else:
+                        res2 = self.client.write_coils(2048 + 3, [False, False])
+
+                left = max(0, min(100, left))
+                right = max(0, min(100, right))
+
+                res3 = self.client.write_registers(10, [left, right])
+                for i, res in enumerate([res1, res2, res3]):
+                    if res is not None and res.isError():
+                        self.get_logger().error(f"Modbus write error {i}: {res}")
+
             except Exception as e:
-                self.get_logger().error(f"write_registers(10, [{left}, {right}]) HATA: {e}")
+                self.get_logger().error(f"Modbus process_joystick Exception: {e}")
 
             self.get_logger().info(f"Joystick → F:{forward}, T:{turn} | D10={left}, D11={right}")
             self.last_forward = forward
@@ -177,12 +205,18 @@ class UDPJoystickListener(Node):
     def write_brush(self, coil_addr, value, force=False):
         last_val = self.last_brush1 if coil_addr == 2068 else self.last_brush2
         if force or value != last_val:
-            self.client.write_coil(coil_addr, bool(value))
-            self.get_logger().info(f"Fırça {coil_addr} → {bool(value)}")
-            if coil_addr == 2068:
-                self.last_brush1 = value
-            elif coil_addr == 2069:
-                self.last_brush2 = value
+            self.ensure_modbus_client()
+            try:
+                res = self.client.write_coil(coil_addr, bool(value))
+                if res is not None and res.isError():
+                    self.get_logger().error(f"Modbus write_brush ({coil_addr}) Error: {res}")
+                self.get_logger().info(f"Fırça {coil_addr} → {bool(value)}")
+                if coil_addr == 2068:
+                    self.last_brush1 = value
+                elif coil_addr == 2069:
+                    self.last_brush2 = value
+            except Exception as e:
+                self.get_logger().error(f"write_brush Exception ({coil_addr}): {e}")
 
 def main(args=None):
     rclpy.init(args=args)
