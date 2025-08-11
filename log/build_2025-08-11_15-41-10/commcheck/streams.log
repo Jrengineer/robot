@@ -1,0 +1,20 @@
+[3.218s] Invoking command in '/home/kaanjetson/ros2_plc_ws/build/commcheck': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/commcheck/build --no-deps symlink_data
+[3.826s] running develop
+[4.229s] running egg_info
+[4.230s] creating commcheck.egg-info
+[4.230s] writing commcheck.egg-info/PKG-INFO
+[4.231s] writing dependency_links to commcheck.egg-info/dependency_links.txt
+[4.231s] writing entry points to commcheck.egg-info/entry_points.txt
+[4.232s] writing requirements to commcheck.egg-info/requires.txt
+[4.232s] writing top-level names to commcheck.egg-info/top_level.txt
+[4.233s] writing manifest file 'commcheck.egg-info/SOURCES.txt'
+[4.238s] reading manifest file 'commcheck.egg-info/SOURCES.txt'
+[4.239s] writing manifest file 'commcheck.egg-info/SOURCES.txt'
+[4.243s] running build_ext
+[4.244s] Creating /home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages/commcheck.egg-link (link to .)
+[4.246s] Installing commcheck script to /home/kaanjetson/ros2_plc_ws/install/commcheck/lib/commcheck
+[4.247s] 
+[4.247s] Installed /home/kaanjetson/ros2_plc_ws/build/commcheck
+[4.248s] running symlink_data
+[4.248s] symbolically linking /home/kaanjetson/ros2_plc_ws/build/commcheck/package.xml -> /home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck
+[4.391s] Invoked command in '/home/kaanjetson/ros2_plc_ws/build/commcheck' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/commcheck/build --no-deps symlink_data

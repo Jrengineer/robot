@@ -1,0 +1,298 @@
+[0.227s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.228s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb1f711e0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb21d1db0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb21d1db0>>)
+[0.590s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.590s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.591s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.591s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.591s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.591s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.591s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kaanjetson/ros2_plc_ws'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.614s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.617s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extensions ['ignore', 'ignore_ament_install']
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extension 'ignore'
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extension 'ignore_ament_install'
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extensions ['colcon_pkg']
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extension 'colcon_pkg'
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extensions ['colcon_meta']
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extension 'colcon_meta'
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extensions ['ros']
+[0.619s] Level 1:colcon.colcon_core.package_identification:_identify(src/battery_streamer) by extension 'ros'
+[0.624s] DEBUG:colcon.colcon_core.package_identification:Package 'src/battery_streamer' with type 'ros.ament_python' and name 'battery_streamer'
+[0.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extensions ['ignore', 'ignore_ament_install']
+[0.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extension 'ignore'
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extension 'ignore_ament_install'
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extensions ['colcon_pkg']
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extension 'colcon_pkg'
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extensions ['colcon_meta']
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extension 'colcon_meta'
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extensions ['ros']
+[0.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/commcheck) by extension 'ros'
+[0.626s] DEBUG:colcon.colcon_core.package_identification:Package 'src/commcheck' with type 'ros.ament_python' and name 'commcheck'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extensions ['ignore', 'ignore_ament_install']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extension 'ignore'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extension 'ignore_ament_install'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extensions ['colcon_pkg']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extension 'colcon_pkg'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extensions ['colcon_meta']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extension 'colcon_meta'
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extensions ['ros']
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(src/oak_streamer) by extension 'ros'
+[0.637s] DEBUG:colcon.colcon_core.package_identification:Package 'src/oak_streamer' with type 'ros.ament_python' and name 'oak_streamer'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extensions ['ignore', 'ignore_ament_install']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extension 'ignore'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extension 'ignore_ament_install'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extensions ['colcon_pkg']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extension 'colcon_pkg'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extensions ['colcon_meta']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extension 'colcon_meta'
+[0.639s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extensions ['ros']
+[0.639s] Level 1:colcon.colcon_core.package_identification:_identify(src/plc_comm) by extension 'ros'
+[0.640s] DEBUG:colcon.colcon_core.package_identification:Package 'src/plc_comm' with type 'ros.ament_python' and name 'plc_comm'
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.715s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.715s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kaanjetson/ros2_plc_ws/install/plc_comm' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kaanjetson/ros2_plc_ws/install/oak_streamer' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kaanjetson/ros2_plc_ws/install/commcheck' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.719s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/kaanjetson/ros2_plc_ws/install
+[0.721s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 274 installed packages in /opt/ros/humble
+[0.724s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_args' from command line to 'None'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_target' from command line to 'None'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_clean_cache' from command line to 'False'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_clean_first' from command line to 'False'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'cmake_force_configure' from command line to 'False'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'ament_cmake_args' from command line to 'None'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'catkin_cmake_args' from command line to 'None'
+[0.804s] Level 5:colcon.colcon_core.verb:set package 'battery_streamer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.805s] DEBUG:colcon.colcon_core.verb:Building package 'battery_streamer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaanjetson/ros2_plc_ws/build/battery_streamer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaanjetson/ros2_plc_ws/install/battery_streamer', 'merge_install': False, 'path': '/home/kaanjetson/ros2_plc_ws/src/battery_streamer', 'symlink_install': True, 'test_result_base': None}
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_args' from command line to 'None'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_target' from command line to 'None'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_clean_cache' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_clean_first' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'cmake_force_configure' from command line to 'False'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'ament_cmake_args' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'catkin_cmake_args' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'commcheck' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.806s] DEBUG:colcon.colcon_core.verb:Building package 'commcheck' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaanjetson/ros2_plc_ws/build/commcheck', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaanjetson/ros2_plc_ws/install/commcheck', 'merge_install': False, 'path': '/home/kaanjetson/ros2_plc_ws/src/commcheck', 'symlink_install': True, 'test_result_base': None}
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_args' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_target' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_clean_cache' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_clean_first' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'cmake_force_configure' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'ament_cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'catkin_cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'oak_streamer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.807s] DEBUG:colcon.colcon_core.verb:Building package 'oak_streamer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaanjetson/ros2_plc_ws/build/oak_streamer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaanjetson/ros2_plc_ws/install/oak_streamer', 'merge_install': False, 'path': '/home/kaanjetson/ros2_plc_ws/src/oak_streamer', 'symlink_install': True, 'test_result_base': None}
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_target' from command line to 'None'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_clean_first' from command line to 'False'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'cmake_force_configure' from command line to 'False'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'ament_cmake_args' from command line to 'None'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.808s] Level 5:colcon.colcon_core.verb:set package 'plc_comm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.808s] DEBUG:colcon.colcon_core.verb:Building package 'plc_comm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaanjetson/ros2_plc_ws/build/plc_comm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaanjetson/ros2_plc_ws/install/plc_comm', 'merge_install': False, 'path': '/home/kaanjetson/ros2_plc_ws/src/plc_comm', 'symlink_install': True, 'test_result_base': None}
+[0.808s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.810s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.811s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaanjetson/ros2_plc_ws/src/battery_streamer' with build type 'ament_python'
+[0.811s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery_streamer', 'ament_prefix_path')
+[0.816s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.816s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/ament_prefix_path.ps1'
+[0.819s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/ament_prefix_path.dsv'
+[0.820s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/ament_prefix_path.sh'
+[0.822s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.822s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.829s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaanjetson/ros2_plc_ws/src/commcheck' with build type 'ament_python'
+[0.829s] Level 1:colcon.colcon_core.shell:create_environment_hook('commcheck', 'ament_prefix_path')
+[0.829s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/ament_prefix_path.ps1'
+[0.831s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/ament_prefix_path.dsv'
+[0.832s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/ament_prefix_path.sh'
+[0.833s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.833s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.839s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaanjetson/ros2_plc_ws/src/oak_streamer' with build type 'ament_python'
+[0.839s] Level 1:colcon.colcon_core.shell:create_environment_hook('oak_streamer', 'ament_prefix_path')
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/ament_prefix_path.ps1'
+[0.841s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/ament_prefix_path.dsv'
+[0.842s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/ament_prefix_path.sh'
+[0.843s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.843s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.849s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaanjetson/ros2_plc_ws/src/plc_comm' with build type 'ament_python'
+[0.849s] Level 1:colcon.colcon_core.shell:create_environment_hook('plc_comm', 'ament_prefix_path')
+[0.850s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/ament_prefix_path.ps1'
+[0.851s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/ament_prefix_path.dsv'
+[0.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/ament_prefix_path.sh'
+[0.853s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.853s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.438s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaanjetson/ros2_plc_ws/src/battery_streamer'
+[1.439s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.439s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.017s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'commcheck' doesn't explicitly install a marker in the package index (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[2.018s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaanjetson/ros2_plc_ws/src/commcheck'
+[2.019s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.020s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.605s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaanjetson/ros2_plc_ws/src/oak_streamer'
+[2.606s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.606s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.175s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaanjetson/ros2_plc_ws/src/plc_comm'
+[3.177s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.177s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.999s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaanjetson/ros2_plc_ws/build/plc_comm': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/plc_comm/build --no-deps symlink_data
+[4.008s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaanjetson/ros2_plc_ws/build/oak_streamer': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/oak_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build --no-deps symlink_data
+[4.048s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaanjetson/ros2_plc_ws/build/commcheck': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/commcheck/build --no-deps symlink_data
+[4.130s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaanjetson/ros2_plc_ws/build/battery_streamer': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/battery_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/battery_streamer/build --no-deps symlink_data
+[5.123s] Level 1:colcon.colcon_core.shell:create_environment_hook('plc_comm', 'pythonpath_develop')
+[5.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/plc_comm/share/plc_comm/hook/pythonpath_develop.ps1'
+[5.127s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/build/plc_comm/share/plc_comm/hook/pythonpath_develop.dsv'
+[5.128s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/plc_comm/share/plc_comm/hook/pythonpath_develop.sh'
+[5.125s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaanjetson/ros2_plc_ws/build/plc_comm' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/plc_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/plc_comm/build --no-deps symlink_data
+[5.141s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm' for CMake module files
+[5.142s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm' for CMake config files
+[5.144s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib'
+[5.145s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm/bin'
+[5.145s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/pkgconfig/plc_comm.pc'
+[5.145s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm/lib/python3.10/site-packages'
+[5.146s] Level 1:colcon.colcon_core.shell:create_environment_hook('plc_comm', 'pythonpath')
+[5.146s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/pythonpath.ps1'
+[5.147s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/pythonpath.dsv'
+[5.148s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/hook/pythonpath.sh'
+[5.149s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/plc_comm/bin'
+[5.149s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(plc_comm)
+[5.150s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/package.ps1'
+[5.161s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/package.dsv'
+[5.163s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/package.sh'
+[5.164s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/package.bash'
+[5.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/plc_comm/package.zsh'
+[5.177s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaanjetson/ros2_plc_ws/install/plc_comm/share/colcon-core/packages/plc_comm)
+[5.206s] Level 1:colcon.colcon_core.shell:create_environment_hook('commcheck', 'pythonpath_develop')
+[5.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/commcheck/share/commcheck/hook/pythonpath_develop.ps1'
+[5.208s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/build/commcheck/share/commcheck/hook/pythonpath_develop.dsv'
+[5.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/commcheck/share/commcheck/hook/pythonpath_develop.sh'
+[5.210s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck' for CMake module files
+[5.211s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck' for CMake config files
+[5.212s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck/lib'
+[5.213s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck/bin'
+[5.213s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/pkgconfig/commcheck.pc'
+[5.213s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages'
+[5.214s] Level 1:colcon.colcon_core.shell:create_environment_hook('commcheck', 'pythonpath')
+[5.214s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/pythonpath.ps1'
+[5.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaanjetson/ros2_plc_ws/build/commcheck' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/commcheck/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/commcheck/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/commcheck/build --no-deps symlink_data
+[5.222s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/pythonpath.dsv'
+[5.223s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/hook/pythonpath.sh'
+[5.225s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/commcheck/bin'
+[5.225s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(commcheck)
+[5.227s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/package.ps1'
+[5.228s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/package.dsv'
+[5.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/package.sh'
+[5.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/package.bash'
+[5.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/commcheck/share/commcheck/package.zsh'
+[5.231s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaanjetson/ros2_plc_ws/install/commcheck/share/colcon-core/packages/commcheck)
+[5.262s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery_streamer', 'pythonpath_develop')
+[5.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/battery_streamer/share/battery_streamer/hook/pythonpath_develop.ps1'
+[5.265s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/build/battery_streamer/share/battery_streamer/hook/pythonpath_develop.dsv'
+[5.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/battery_streamer/share/battery_streamer/hook/pythonpath_develop.sh'
+[5.267s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaanjetson/ros2_plc_ws/build/battery_streamer' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/battery_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/battery_streamer/build --no-deps symlink_data
+[5.268s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer' for CMake module files
+[5.269s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer' for CMake config files
+[5.270s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib'
+[5.270s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/bin'
+[5.270s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/pkgconfig/battery_streamer.pc'
+[5.271s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages'
+[5.271s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery_streamer', 'pythonpath')
+[5.271s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/pythonpath.ps1'
+[5.272s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/pythonpath.dsv'
+[5.273s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/hook/pythonpath.sh'
+[5.274s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/bin'
+[5.274s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(battery_streamer)
+[5.275s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/package.ps1'
+[5.276s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/package.dsv'
+[5.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/package.sh'
+[5.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/package.bash'
+[5.279s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer/package.zsh'
+[5.280s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/colcon-core/packages/battery_streamer)
+[5.282s] Level 1:colcon.colcon_core.shell:create_environment_hook('oak_streamer', 'pythonpath_develop')
+[5.283s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaanjetson/ros2_plc_ws/build/oak_streamer' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/oak_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/oak_streamer/build --no-deps symlink_data
+[5.283s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.ps1'
+[5.285s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.dsv'
+[5.286s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/build/oak_streamer/share/oak_streamer/hook/pythonpath_develop.sh'
+[5.287s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer' for CMake module files
+[5.288s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer' for CMake config files
+[5.289s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib'
+[5.289s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/bin'
+[5.289s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/pkgconfig/oak_streamer.pc'
+[5.289s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/lib/python3.10/site-packages'
+[5.289s] Level 1:colcon.colcon_core.shell:create_environment_hook('oak_streamer', 'pythonpath')
+[5.290s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/pythonpath.ps1'
+[5.291s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/pythonpath.dsv'
+[5.292s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/hook/pythonpath.sh'
+[5.293s] Level 1:colcon.colcon_core.environment:checking '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/bin'
+[5.293s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oak_streamer)
+[5.293s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/package.ps1'
+[5.294s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/package.dsv'
+[5.296s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/package.sh'
+[5.296s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/package.bash'
+[5.297s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/oak_streamer/package.zsh'
+[5.298s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaanjetson/ros2_plc_ws/install/oak_streamer/share/colcon-core/packages/oak_streamer)
+[5.299s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.300s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.300s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.300s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.320s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.321s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.321s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.359s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ChildExited: Process org.freedesktop.Notifications exited with status 1
+[5.360s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.361s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaanjetson/ros2_plc_ws/install/local_setup.ps1'
+[5.363s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kaanjetson/ros2_plc_ws/install/_local_setup_util_ps1.py'
+[5.366s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaanjetson/ros2_plc_ws/install/setup.ps1'
+[5.368s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaanjetson/ros2_plc_ws/install/local_setup.sh'
+[5.370s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kaanjetson/ros2_plc_ws/install/_local_setup_util_sh.py'
+[5.372s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaanjetson/ros2_plc_ws/install/setup.sh'
+[5.374s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaanjetson/ros2_plc_ws/install/local_setup.bash'
+[5.375s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaanjetson/ros2_plc_ws/install/setup.bash'
+[5.377s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaanjetson/ros2_plc_ws/install/local_setup.zsh'
+[5.379s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaanjetson/ros2_plc_ws/install/setup.zsh'

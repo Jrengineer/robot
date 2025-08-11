@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+battery_streamer/__init__.py
+battery_streamer/battery_udp_node.py
+battery_streamer.egg-info/PKG-INFO
+battery_streamer.egg-info/SOURCES.txt
+battery_streamer.egg-info/dependency_links.txt
+battery_streamer.egg-info/entry_points.txt
+battery_streamer.egg-info/requires.txt
+battery_streamer.egg-info/top_level.txt
+battery_streamer.egg-info/zip-safe
+resource/battery_streamer

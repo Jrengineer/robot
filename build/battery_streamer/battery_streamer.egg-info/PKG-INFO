@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: battery-streamer
+Version: 0.1.0
+Summary: Battery telemetry UDP streamer controlled by a TCP session.
+Home-page: UNKNOWN
+Maintainer: Kaan
+Maintainer-email: you@example.com
+License: MIT
+Platform: UNKNOWN
+
+UNKNOWN
+

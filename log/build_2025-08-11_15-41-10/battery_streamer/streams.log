@@ -1,0 +1,24 @@
+[3.318s] Invoking command in '/home/kaanjetson/ros2_plc_ws/build/battery_streamer': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/battery_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/battery_streamer/build --no-deps symlink_data
+[3.888s] running develop
+[4.261s] running egg_info
+[4.262s] creating battery_streamer.egg-info
+[4.263s] writing battery_streamer.egg-info/PKG-INFO
+[4.264s] writing dependency_links to battery_streamer.egg-info/dependency_links.txt
+[4.266s] writing entry points to battery_streamer.egg-info/entry_points.txt
+[4.266s] writing requirements to battery_streamer.egg-info/requires.txt
+[4.267s] writing top-level names to battery_streamer.egg-info/top_level.txt
+[4.268s] writing manifest file 'battery_streamer.egg-info/SOURCES.txt'
+[4.274s] reading manifest file 'battery_streamer.egg-info/SOURCES.txt'
+[4.275s] writing manifest file 'battery_streamer.egg-info/SOURCES.txt'
+[4.280s] running build_ext
+[4.291s] Creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages/battery-streamer.egg-link (link to .)
+[4.295s] Installing battery_udp_node script to /home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/battery_streamer
+[4.296s] 
+[4.297s] Installed /home/kaanjetson/ros2_plc_ws/build/battery_streamer
+[4.297s] running symlink_data
+[4.299s] creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index
+[4.312s] creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index
+[4.312s] creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index/packages
+[4.312s] symbolically linking /home/kaanjetson/ros2_plc_ws/build/battery_streamer/resource/battery_streamer -> /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index/packages
+[4.312s] symbolically linking /home/kaanjetson/ros2_plc_ws/build/battery_streamer/package.xml -> /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer
+[4.455s] Invoked command in '/home/kaanjetson/ros2_plc_ws/build/battery_streamer' returned '0': PYTHONPATH=/home/kaanjetson/ros2_plc_ws/build/battery_streamer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kaanjetson/ros2_plc_ws/build/battery_streamer/build --no-deps symlink_data

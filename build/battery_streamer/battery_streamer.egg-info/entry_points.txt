@@ -1,0 +1,3 @@
+[console_scripts]
+battery_udp_node = battery_streamer.battery_udp_node:main
+

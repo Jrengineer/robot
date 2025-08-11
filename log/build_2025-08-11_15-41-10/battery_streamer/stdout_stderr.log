@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating battery_streamer.egg-info
+writing battery_streamer.egg-info/PKG-INFO
+writing dependency_links to battery_streamer.egg-info/dependency_links.txt
+writing entry points to battery_streamer.egg-info/entry_points.txt
+writing requirements to battery_streamer.egg-info/requires.txt
+writing top-level names to battery_streamer.egg-info/top_level.txt
+writing manifest file 'battery_streamer.egg-info/SOURCES.txt'
+reading manifest file 'battery_streamer.egg-info/SOURCES.txt'
+writing manifest file 'battery_streamer.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/python3.10/site-packages/battery-streamer.egg-link (link to .)
+Installing battery_udp_node script to /home/kaanjetson/ros2_plc_ws/install/battery_streamer/lib/battery_streamer
+
+Installed /home/kaanjetson/ros2_plc_ws/build/battery_streamer
+running symlink_data
+creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index
+creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index
+creating /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/battery_streamer/resource/battery_streamer -> /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/ament_index/resource_index/packages
+symbolically linking /home/kaanjetson/ros2_plc_ws/build/battery_streamer/package.xml -> /home/kaanjetson/ros2_plc_ws/install/battery_streamer/share/battery_streamer
